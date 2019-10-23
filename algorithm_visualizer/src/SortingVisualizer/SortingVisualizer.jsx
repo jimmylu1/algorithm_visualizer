@@ -18,18 +18,10 @@ export default class SortingVisualizer extends Component {
     this.resetArray();
   }
 
-  // resetArray() {
-  //   const array = [];
-  //   for (let i = 0; i < NUMBER_OF_BARS; i++) {
-  //     array.push(randomNumber(5, 650));
-  //   }
-  //   this.setState({ array });
-  // }
-
   resetArray() {
     const array = [];
     for (let i = 0; i < NUMBER_OF_BARS; i++) {
-      array.push(randomNumber(5, 730));
+      array.push(randomNumber(5, 650));
     }
     this.setState({ array });
   }
@@ -52,7 +44,9 @@ export default class SortingVisualizer extends Component {
             ></div>
           ))}
         </div>
-        <button onClick={resetArray}>Generate New Array</button>
+        <button className="button" onClick={resetArray}>
+          Generate New Array
+        </button>
       </div>
     );
   }
@@ -64,8 +58,3 @@ const randomNumber = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
-// function randomNumber(min, max) {
-//   // min and max included
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// }
